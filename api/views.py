@@ -5,7 +5,7 @@ import logging, datetime
 
 api_blueprint = Blueprint('api_blueprint', __name__)
 posts = PostsDAO('./data/posts.json', './data/comments.json')
-logging.basicConfig(filename='./logs/basic.log', level=INFO, format='%(asctime)s [%(levelname)s] %(message)s')
+logging.basicConfig(filename='./logs/basic.log', level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 
 @api_blueprint.route('api/posts', methods=['GET'])
 def get_all_posts():

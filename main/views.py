@@ -4,8 +4,8 @@ from flask import request
 from dao.dao import PostsDAO
 
 
-posts_path = '../data/posts.json'
-comments_path = '../data/comments.json'
+posts_path = './data/posts.json'
+comments_path = './data/comments.json'
 main_blueprint = Blueprint('main_blueprint', __name__, template_folder='./templates')
 posts = PostsDAO('./data/posts.json', './data/comments.json')
 

@@ -3,7 +3,7 @@ import json
 from dao.post import Post
 
 class PostsDAO:
-    def __int__(self, posts_path, comments_path):
+    def __init__(self, posts_path, comments_path):
         self.posts_path = posts_path
         self.comments_path = comments_path
 
@@ -36,13 +36,13 @@ class PostsDAO:
                 return post
         return
 
-    def load_posts(self):
+    def load_comments(self):
         """Создаем метод, который открывает json файл"""
         with open(self.comments_path, 'r', encoding='utf-8') as file:
             comments = json.load(file)
         return comments
 
-    def get_comments_by_post_id(self,post_id):
+    def get_comments_by_post_id(self, post_id):
         """создаем метод, который возвращает комментарии определенного пользователя"""
         comments = self.load_comments()
         post_comments = []
@@ -78,7 +78,7 @@ class PostsDAO:
             posts_data = json.load(file)
         return posts_data
 
-    def get_post_by_pk_json(self,pk):
+    def get_post_by_pk_json(self, pk):
         posts = self.load_posts_json()
         for post in posts:
             if post['pk'] == pk:
