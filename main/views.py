@@ -7,7 +7,7 @@ from dao.dao import PostsDAO
 posts_path = './data/posts.json'
 comments_path = './data/comments.json'
 main_blueprint = Blueprint('main_blueprint', __name__, template_folder='./templates')
-posts = PostsDAO('./data/posts.json', './data/comments.json')
+posts = PostsDAO('./posts.json', './comments.json')
 
 @main_blueprint.route('/')
 def index_page():
